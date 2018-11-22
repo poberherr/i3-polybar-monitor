@@ -1,7 +1,7 @@
 REPO_ROOT=$(shell git rev-parse --show-toplevel)
 
-# bootstrap:
-#     -bash -c "./attach.sh"
+bootstrap:
+	-bash -c "./attach.sh"
 
 kill-polybar:
 	-bash -c "killall polybar"

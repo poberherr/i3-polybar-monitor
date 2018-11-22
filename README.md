@@ -17,3 +17,6 @@ For now - I call my makefile over my bash/zshrc as an alias
 ```
 alias res='f() { cd ~/<Your repo clone path>/; make $1 };f'
 ``````
+
+Use the automated way to attach this to your bash/zshrc
+`make bootstrap`
