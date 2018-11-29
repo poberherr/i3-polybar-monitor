@@ -1,4 +1,5 @@
 REPO_ROOT=$(shell git rev-parse --show-toplevel)
+# TODO: Add feh
 
 bootstrap:
 	-bash -c "./attach.sh"
