@@ -17,8 +17,10 @@ home: kill-polybar
 
 work: kill-polybar
 	-bash -c "mons -S 5,6:R"
-	-bash -c "xrandr --output DP-1-2 --rotate right"
+	-bash -c "xrandr --output DP-1-2"
+	# -bash -c "xrandr --output DP-1-2 --rotate right"
 	-bash -c "${REPO_ROOT}/launch_polybar.sh"
+	-bash -c "feh --bg-fill ~/Documents/background/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg --bg-fill ~/Documents/background/2DJCWMr.jpg"
 
 l: kill-polybar
 	-bash -c "mons -o"
@@ -40,3 +42,10 @@ lb: kill-polybar
 	-bash -c "${REPO_ROOT}/launch_polybar.sh"
 
 lappi-big: lb
+
+os:
+	-bash -c "mons -s"
+	-bash -c "${REPO_ROOT}/launch_polybar.sh"
+	-bash -c "feh --bg-fill ~/Documents/background/2DJCWMr.jpg"
+
+
