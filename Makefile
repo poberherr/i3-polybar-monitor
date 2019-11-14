@@ -19,12 +19,6 @@ home: kill-polybar
 	-bash -c "feh --bg-fill ~/Documents/background/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg --bg-fill ~/Documents/background/2DJCWMr.jpg"
 
 
-stockholm: kill-polybar
-	mons -e right
-	xrandr --output HDMI-2 --off --output HDMI-1 --mode 1920x1080 --pos 2560x0 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1600x900 --pos 0x0 --rotate normal --output DP-2 --off
-	$(REPO_ROOT)/launch_polybar.sh
-	feh --bg-fill ~/Documents/background/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg --bg-fill ~/Documents/background/2DJCWMr.jpg
-
 work: kill-polybar
 	mons -S 5,6:R
 	xrandr --output DP-1-2
@@ -64,6 +58,9 @@ os:
 	-bash -c "${REPO_ROOT}/launch_polybar.sh"
 	-bash -c "feh --bg-fill ~/Documents/background/2DJCWMr.jpg"
 
-stockholm:
-	xrandr --output HDMI-2 --off --output HDMI-1 --mode 2560x1440 --pos 1368x0 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1368x768 --pos 0x1032 --rotate normal --output DP-2 --off
-	-bash -c "${REPO_ROOT}/launch_polybar.sh"
+stockholm: kill-polybar
+	xrandr --output HDMI-2 --off --output HDMI-1 --mode 2560x1440 --pos 1368x0 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1368x768 --pos 2024x1440 --rotate normal --output DP-2 --off
+	MONITOR=HDMI-1 polybar -l error --reload example &
+	feh --bg-fill ~/Documents/background/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg --bg-fill ~/Documents/background/2DJCWMr.jpg
+
+	# -bash -c "${REPO_ROOT}/launch_polybar.sh"
